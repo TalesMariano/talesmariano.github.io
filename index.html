@@ -236,9 +236,10 @@
 									<h3>Resume</h3>
 									<p></p>
 									<ul class="actions">
-										<li><a href="https://docs.google.com/document/d/e/2PACX-1vSmbdcjzOe3uWl9Pn4-jeiUe0nUQ7uzO8aZZjuHsRA9Vl-tHsQLYqLzi_UZfJkTp7WchnYWt8FQpAmy/pub" target="_blank" class="button small">Show Online</a></li>
+										<li><a href="https://drive.google.com/file/d/10Vha-uSmvze-Yf-ieJ12x0pkD7m1Is99/view" target="_blank" class="button">Show</a></li>
 										<br>
-										<li><a href="https://docs.google.com/document/d/1gUjmQQLpiqiOZYVq76Bk9tGcIEyptG8KIHpopc6yBeQ/export?format=pdf" class="button  small">Download</a></li>
+										<!-- Got Help From https://www.makeuseof.com/create-direct-link-google-drive-files/ -->
+										<li><a href="https://drive.google.com/uc?id=10Vha-uSmvze-Yf-ieJ12x0pkD7m1Is99&export=download" class="button ">Download</a></li>
 
 									</ul>
 
@@ -300,12 +301,16 @@
 										<li>
 											<h3>Address</h3>
 											<span>
-											H2G 2Z3 - Montréal - Quebec <br/>
+											Montréal, QC - H2G 2Z3<br/>
 											Canada</span>
 										</li>
 										<li>
 											<h3>Email</h3>
-											<a href="mailto:Tales.Mariano1@gmail.com">Tales.Mariano1@gmail.com</a>
+											<span id="email"></span>
+										</li>
+										<li>
+											<h3>Phone</h3>
+											<span id="phone"></span>
 										</li>
 										<li>
 											<h3>Social</h3>
@@ -344,6 +349,31 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 			<script src="https://kit.fontawesome.com/54e4031cd0.js" crossorigin="anonymous"></script>
+
+			<script type="text/javascript">
+				function generateEmailLink() {
+				  var user = "Tales.Mariano1";
+				  var domain = "gmail.com";
+				  var emailLink = '<a href="mailto:' + user + '@' + domain + '">' + user + '@' + domain + '</a>';
+				  document.getElementById("email").innerHTML = emailLink;
+				}
+
+				function generatePhoneNumber() {
+				  var part1 = "+1 438 7";
+				  var part2 = "28 3881";
+				  var phoneNumber = part1 + part2;
+				  document.getElementById("phone").innerHTML = phoneNumber;
+				}
+			</script>
+
+			<script type="text/javascript">
+				window.onload = function () {
+				generateEmailLink();
+				generatePhoneNumber();
+				};
+			</script>
+  
+			  
 
 	</body>
 </html>
